@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aM0-KB-Lgx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -217,8 +217,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0kG-4u-NGs">
-                                <rect key="frame" x="0.0" y="74" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="127" width="414" height="672"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="0.97973659140000002" blue="0.4757291763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="345" id="FDP-e1-oEp" customClass="FeedCell" customModule="SnapchatClone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="345"/>
@@ -257,18 +258,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <switch opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S39-vv-sq3">
+                                <rect key="frame" x="335" y="62" width="51" height="31"/>
+                                <color key="onTintColor" systemColor="labelColor"/>
+                                <connections>
+                                    <action selector="switchBtnClicked:" destination="C3T-Be-9fk" eventType="valueChanged" id="ZeP-hS-XKH"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Uhw-2y-Akm"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
+                            <constraint firstItem="S39-vv-sq3" firstAttribute="leading" secondItem="Uhw-2y-Akm" secondAttribute="leading" constant="335" id="BAF-6B-pSk"/>
                             <constraint firstItem="0kG-4u-NGs" firstAttribute="leading" secondItem="Uhw-2y-Akm" secondAttribute="leading" id="DA6-M7-ix7"/>
                             <constraint firstItem="Uhw-2y-Akm" firstAttribute="bottom" secondItem="0kG-4u-NGs" secondAttribute="bottom" constant="14" id="SNz-7C-ZS6"/>
-                            <constraint firstItem="0kG-4u-NGs" firstAttribute="top" secondItem="Uhw-2y-Akm" secondAttribute="top" constant="30" id="aVM-WP-oBI"/>
+                            <constraint firstItem="S39-vv-sq3" firstAttribute="top" secondItem="Uhw-2y-Akm" secondAttribute="top" constant="18" id="UjE-rT-zcK"/>
+                            <constraint firstItem="0kG-4u-NGs" firstAttribute="top" secondItem="Uhw-2y-Akm" secondAttribute="top" constant="83" id="aVM-WP-oBI"/>
                             <constraint firstItem="0kG-4u-NGs" firstAttribute="centerX" secondItem="Qfr-MG-uEx" secondAttribute="centerX" id="taJ-2h-HWt"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="f.cursive.circle.fill" catalog="system" id="Heh-eW-6F4"/>
                     <connections>
+                        <outlet property="switchbtn" destination="S39-vv-sq3" id="4OP-lZ-il1"/>
                         <outlet property="tableView" destination="0kG-4u-NGs" id="pJl-kQ-NRQ"/>
                         <segue destination="muc-YV-0j3" kind="show" identifier="toSnapVC" id="PT2-cr-peP"/>
                     </connections>
@@ -331,6 +342,9 @@
         <image name="f.cursive.circle.fill" catalog="system" width="128" height="121"/>
         <image name="s.circle.fill" catalog="system" width="128" height="121"/>
         <image name="u.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

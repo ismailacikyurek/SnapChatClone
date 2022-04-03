@@ -15,7 +15,8 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var snapArray = [snap]()
     var chosenSnap : snap?
     var timeleft : Int?
-
+    @IBOutlet weak var switchbtn: UISwitch!
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,5 +125,23 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         chosenSnap = self.snapArray[indexPath.row]
         performSegue(withIdentifier: "toSnapVC", sender: nil)
     }
+    
+    
+    
+    @IBAction func switchBtnClicked(_ sender: Any) { //dark-Light
+        if switchbtn.tag == 1 {
+                       
+                       let appDelagete = UIApplication.shared.windows.first
+                       appDelagete?.overrideUserInterfaceStyle = .dark
+                       switchbtn.tag = 0
+                   } else  {
+                       
+                       let appDelagete = UIApplication.shared.windows.first
+                       appDelagete?.overrideUserInterfaceStyle = .light
+                       switchbtn.tag = 1
+                      
+                   }
+    }
+    
     
 }

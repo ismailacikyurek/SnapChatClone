@@ -31,7 +31,7 @@ class SnapVC: UIViewController {
             
             
             
-            let imageSlideShow = ImageSlideshow(frame: CGRect(x: 10, y: 10, width: self.view.frame.width * 0.95, height: self.view.frame.height * 0.9))
+            let imageSlideShow = ImageSlideshow(frame: CGRect(x: 10, y: 10, width: self.view.frame.width * 0.95, height: self.view.frame.height * 0.8))
             imageSlideShow.backgroundColor = .white
             
             let pageIndicator = UIPageControl()
